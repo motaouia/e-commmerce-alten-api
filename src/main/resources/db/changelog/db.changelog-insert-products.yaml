@@ -1,0 +1,94 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: Mohamed MOTAOUIA
+      changes:
+        - insert:
+            tableName: PRODUCTS
+            columns:
+              - column:
+                  name: code
+                  value: "PRD001"
+              - column:
+                  name: name
+                  value: "Product 1"
+              - column:
+                  name: description
+                  value: "First product description"
+              - column:
+                  name: image
+                  value: "http://ma.alten.ecommrce/product1.jpg"
+              - column:
+                  name: category
+                  value: "Electronics"
+              - column:
+                  name: price
+                  valueNumeric: 199.99
+              - column:
+                  name: quantity
+                  valueNumeric: 100
+              - column:
+                  name: internal_reference
+                  value: "REF001"
+              - column:
+                  name: shell_id
+                  valueNumeric: 10
+              - column:
+                  name: inventory_status
+                  value: "IN_STOCK"
+              - column:
+                  name: rating
+                  valueNumeric: 4.5
+              - column:
+                  name: created_at
+                  valueDate: "2023-10-11T10:00:00"
+              - column:
+                  name: updated_at
+                  valueDate: "2023-10-11T10:00:00"
+
+  - changeSet:
+      id: 3
+      author: yourname
+      changes:
+        - insert:
+            tableName: PRODUCTS
+            columns:
+              - column:
+                  name: code
+                  value: "PRD002"
+              - column:
+                  name: name
+                  value: "Product 2"
+              - column:
+                  name: description
+                  value: "Second product description"
+              - column:
+                  name: image
+                  value: "http://ma.alten.ecommrce/product2.jpg"
+              - column:
+                  name: category
+                  value: "Appliances"
+              - column:
+                  name: price
+                  valueNumeric: 299.99
+              - column:
+                  name: quantity
+                  valueNumeric: 50
+              - column:
+                  name: internal_reference
+                  value: "REF002"
+              - column:
+                  name: shell_id
+                  valueNumeric: 20
+              - column:
+                  name: inventory_status
+                  value: "OUT_OF_STOCK"
+              - column:
+                  name: rating
+                  valueNumeric: 4.2
+              - column:
+                  name: created_at
+                  valueDate: "2023-10-11T11:00:00"
+              - column:
+                  name: updated_at
+                  valueDate: "2023-10-11T11:00:00"
