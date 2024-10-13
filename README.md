@@ -1,8 +1,9 @@
-Project Name: Product Management API
-Overview
+# E-commerce-Alten Products Management System API
+
+## Overview
 This project is a back-end application built using Spring Boot 3 and JDK 17, designed for managing product data. It provides REST APIs to perform CRUD operations on products and includes features such as exception handling, data persistence with Spring Data JPA, an in-memory database (H2), database versioning with Liquibase, and unit testing with JUnit 5 and Mockito.
 
-Technologies Used
+## Technologies Used
 Spring Boot 3: For building REST APIs quickly and efficiently.
 JDK 17: The project is built with Java 17.
 Spring Data JPA: For data persistence and database interaction.
@@ -24,23 +25,31 @@ The API manages products and supports the following endpoints:
 Product Entity
 The Product entity includes the following attributes:
 
-id: Long
-code: String
-name: String
-description: String
-image: String
-category: String
-price: Double
-quantity: Integer
-internalReference: String
-shellId: Integer
-inventoryStatus: ("INSTOCK", "LOWSTOCK", "OUTOFSTOCK")
-rating: Double
-createdAt: LocalDateTime
-updatedAt: LocalDateTime
+```java
+public class Product implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private String code;
+	private String name;
+	private String description;
+	private String image;
+	private String category;
+	private Double price;
+	private Integer quantity;
+	private String internalReference;
+	private Integer shellId;
+	private String inventoryStatus;
+	private Double rating;
+	private LocalDateTime createdAt;
+	private LocalDateTime updatedAt;
+
+}
+```
 
 
-Features
+## Features
 1. CRUD Operations on Products
 POST /products: Create a new product.
 GET /products: Retrieve a list of all products.
@@ -64,32 +73,42 @@ Swagger is integrated to provide interactive API documentation. You can access t
 
 Installation
 Clone the repository:
+```bash
+git clone https://github.com/motaouia/e-commmerce-alten-api.git
+cd e-commmerce-alten-ap
+```
 
-git clone https://github.com/your-repository-url
-cd product-management-api
 Build the project using Maven:
-
-mvn clean install
+```bash
+mvn clean install -U -X
+```
 Run the application:
-
+```bash
 mvn spring-boot:run
+```
+## H2 Console
 Access the H2 Console: Once the application is running, you can access the H2 database console at:
 
-http://localhost:9988/h2-console The database URL and credentials can be found in the application-dev.properties file.
+[h2-console](http://localhost:9988/h2-console) The database URL and credentials can be found in the application-dev.properties file.
+
+## Swagger UI 
 Access Swagger UI: You can explore the API and test the endpoints via Swagger UI at:
 
-http://localhost:9988/swagger-ui
-Running Tests
-To run the tests, execute the following command:
+[Swagger UI](http://localhost:9988/swagger-ui) 
 
+
+## Running Tests
+To run the tests, execute the following command:
+```bash
 mvn test
+```
 Unit tests using JUnit 5 and Mockito will be executed, ensuring that the service and repository layers function as expected.
 
 Database Configuration
 This project uses H2 as the default in-memory database. If you want to switch to another database, you can modify the application.properties file and configure the data source accordingly.
 
-License
+## License
 This project is licensed under the MIT License.
 
-Contributors
+## Contributors
 Mohamed MOTAOUIA
